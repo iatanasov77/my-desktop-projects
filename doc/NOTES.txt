@@ -1,0 +1,19 @@
+# Setup US keyboard
+sudo dpkg-reconfigure keyboard-configuration
+
+# Install QT5
+sudo apt-get install qt5-default
+sudo apt-get install qtcreator
+
+# Build from source
+https://doc.qt.io/qt-5/linux-building.html
+
+# Database Drivers
+sudo apt-get install libqt5sql5-mysql
+
+# Database Drivers
+ls -la /home/vagrant/tools/qt-5.14.1/x86_64/plugins/sqldrivers/
+
+# Apt Tricks
+https://askubuntu.com/questions/32507/how-do-i-get-a-list-of-installed-files-from-a-package
+

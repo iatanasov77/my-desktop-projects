@@ -1,0 +1,11 @@
+---
+  - name: keyboard-layout
+    src: https://github.com/gantsign/ansible-role-keyboard.git
+    scm: git
+
+  - name: geerlingguy.mysql
+    src: geerlingguy.mysql
+    
+  - name: vs-qt-dev
+    src: https://github.com/iatanasov77/ansible-role-qt-dev.git
+    scm: git

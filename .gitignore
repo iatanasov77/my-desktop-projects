@@ -1,0 +1,31 @@
+##############################
+# Eclipse project meta data
+##############################
+/.settings/
+/.buildpath
+.buildpath
+/.project
+/.dbeaver-data-sources.xml
+/.dbeaver/
+/.cproject
+
+##############################
+# Vagrant meta data
+##############################
+/.vagrant/
+/.env
+/*.log
+
+##############################
+# Ansible meta data
+##############################
+/roles/
+/playbook.retry
+
+##############################
+# Examples meta data
+##############################
+/examples/*/Makefile
+/examples/*/.o
+/examples/HelloWorld/HelloWorld
+/examples/QxOrmDemo/ormDemo

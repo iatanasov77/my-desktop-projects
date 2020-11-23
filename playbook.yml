@@ -1,0 +1,16 @@
+---
+- hosts: all
+  roles:
+    - kde-common
+    - qt-dev
+  vars:
+    user: "vagrant"
+    homedir: "/home/vagrant/"
+    toolsdir: "{{homedir}}/tools/"
+    desktop_environment: "KDE"
+    git_install_gui: true
+    git_install_git_cola: true
+    username: "iatanasov77"
+    usermail: "i.atanasov77@gmail.com"
+    use_android: false
+    use_raspi: false

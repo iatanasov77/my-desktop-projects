@@ -1,0 +1,33 @@
+---
+- hosts: all
+  pre_tasks:
+    - name: Install Python PIP
+      become: true
+      apt:
+        name: python-pip
+        state: present
+    - name: Make sure pymysql is present
+      become: true
+      pip:
+        name: pymysql
+        state: present
+
+  roles:
+    - keyboard-layout
+    - vs-qt-dev
+    - role: geerlingguy.mysql
+      become: yes
+
+  tasks:
+    - name: Install Usefull Packages
+      apt:
+        name: ['mc']
+        state: present
+      become: true
+
+    - name: Terminate KDE Session
+      shell: loginctl terminate-user "vagrant"
+
+# Build Qt with 'sudo vs-compile-qt.sh' and add qmake to path 'sudo ln -sf /home/vagrant/tools/qt-5.14.1/x86_64/bin/qmake /usr/bin/qmake'
+# Create Project with 'qmake -project' and add line 'QT += widgets' to the project_name.pro files
+# Run 'qmake'

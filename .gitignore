@@ -26,6 +26,6 @@
 # Examples meta data
 ##############################
 /examples/*/Makefile
-/examples/*/.o
+/examples/*/*.o
 /examples/HelloWorld/HelloWorld
 /examples/QxOrmDemo/ormDemo

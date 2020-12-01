@@ -2,14 +2,6 @@
 #############################################
 https://www.qxorm.com/qxorm_en/download.html
 
-# Create QxOrm Deb Package
-# ------------------------
-# Build Deb Package Manual: https://dev.to/mithil467/how-to-make-a-deb-for-your-program-3n0d
-##############################################################################################
-dpkg-deb --build folder_ver_0_0_0
-sudo apt install ./folder_ver_0_0_0.deb
-
-
 # Download and Install QxEntityEditor
 #############################################
 wget https://www.qxorm.com/php/add_download.php5?file_path=QxEntityEditor/1.2.5/QxEntityEditor_1.2.5_linux_64b.tar.gz .

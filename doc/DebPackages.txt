@@ -1,0 +1,16 @@
+# Build Deb Package Manual: https://dev.to/mithil467/how-to-make-a-deb-for-your-program-3n0d
+##############################################################################################
+
+dpkg-deb --build folder_ver_0_0_0
+sudo apt install ./folder_ver_0_0_0.deb
+
+# List Files in deb package
+dpkg -c package_file.deb
+
+# Show Package Info
+dpkg-deb -I package_file.deb
+
+# Extract Deb Package
+ar vx package_file.deb
+tar xvf control.tar.xz
+tar xvf data.tar.xz

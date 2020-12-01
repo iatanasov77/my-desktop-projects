@@ -7,3 +7,8 @@ Used `https://github.com/awinterstein/vagrant-qt-dev` as base but made some usef
 * Install mysql server to can used with apps
 
 NOTE: For more info read the comments and instructions here `https://github.com/awinterstein/vagrant-qt-dev`
+
+Also here is added cross compilation oportunity to compile QT apps for Windows. To do this run: sudo vs-cross-compile-qt.sh
+This will compile qt for windows and then you can enter you project dir: cd /path/to/your/project
+and Run: qmake-mingw && make
+

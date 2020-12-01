@@ -17,3 +17,8 @@ ls -la /home/vagrant/tools/qt-5.14.1/x86_64/plugins/sqldrivers/
 # Apt Tricks
 https://askubuntu.com/questions/32507/how-do-i-get-a-list-of-installed-files-from-a-package
 
+
+# Eclipse Plugins
+#####################
+Direct Remote C++ Debugging
+

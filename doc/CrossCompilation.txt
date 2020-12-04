@@ -1,7 +1,13 @@
-https://uncannier.com/cross-compile-qt-mingw-windows-applications-on-a-linux-host/
-
+==================================================================================================
+= Tutorial: https://uncannier.com/cross-compile-qt-mingw-windows-applications-on-a-linux-host/
+==================================================================================================
 
 sudo apt install mingw-w64
+
+# Required Libs for pack the built application
+##################################################
+sudo locate libstdc++-6.dll
+sudo locate libgcc_s_seh-1.dll
 
 Install DxSdk
 -------------------
@@ -26,4 +32,11 @@ You should explicitly select one to install.
 
 sudo apt install wine-dev
 
-
+==============================================================================
+= Creating Installers
+= -----------------------
+= Since Qt Installer Framework cannot used with cross compilation
+= Use next Tool:
+= https://installbuilder.com/
+= https://installbuilder.com/download-step-2.html
+==============================================================================

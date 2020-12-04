@@ -15,6 +15,7 @@
   vars:
     keyboard_layout: "us,bg"
     keyboard_variant: ",phonetic"
+    install_wine: true
 
   roles:
     - keyboard-layout

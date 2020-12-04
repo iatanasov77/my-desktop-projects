@@ -31,11 +31,9 @@ Vagrant.configure(2) do |config|
   #config.vm.box_version = "1.2.0"
   #config.vm.box_version = "2.0.0"
   
+  config.vm.define ENV['MASHINE_NAME']
   config.vm.network :private_network, ip: ENV['PUBLIC_IP']
   
-  config.vm.synced_folder "examples/", "/home/vagrant/example_projects/",
-    owner: "vagrant", group: "vagrant"
-    
   config.vm.synced_folder "./", "/vagrant"
   config.vm.synced_folder ENV['FOLDER_PROJECTS'], "/projects"
 
@@ -72,13 +70,13 @@ Vagrant.configure(2) do |config|
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook 			= "playbook.yml"
     ansible.galaxy_role_file 	= "requirements.yml"
-    #ansible.verbose        		= true
+    #ansible.verbose        	= true
   end
   
   # Run Ansible to reconfigure how i want it
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook 			= "vs_playbook.yml"
     ansible.galaxy_role_file 	= "vs_requirements.yml"
-    #ansible.verbose        		= true
+    #ansible.verbose        	= true
   end
 end

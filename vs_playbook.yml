@@ -15,7 +15,12 @@
   vars:
     keyboard_layout: "us,bg"
     keyboard_variant: ",phonetic"
-    install_wine: true
+    # This made kde to crash
+    # ----------------------
+    # with: virtualbox does not support mouse pointer integration in the current video mode
+    # on syslog writes: sddm.service: Failed with result 'core-dump'
+    ##########################################################################################
+    #install_wine: true
 
   roles:
     - keyboard-layout

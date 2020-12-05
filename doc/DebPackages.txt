@@ -14,3 +14,15 @@ dpkg-deb -I package_file.deb
 ar vx package_file.deb
 tar xvf control.tar.xz
 tar xvf data.tar.xz
+
+
+# Create Package
+# --------------
+# NOTE: Dont forget to made package in non windows dir :)
+############################################################################
+mkdir QxOrm-1.4.7/DEBIAN
+touch QxOrm-1.4.7/DEBIAN/control
+ln -s /usr/lib/libQxOrmd.so.1.4.7 QxOrm-1.4.7/usr/lib/libQxOrmd.so
+ln -s /usr/lib/libQxOrmd.so.1.4.7 QxOrm-1.4.7/usr/lib/libQxOrmd.so.1
+ln -s /usr/lib/libQxOrmd.so.1.4.7 QxOrm-1.4.7/usr/lib/libQxOrmd.so.1.4
+

@@ -1,0 +1,4 @@
+---
+- name: keyboard-layout
+  src: https://github.com/gantsign/ansible-role-keyboard.git
+  scm: git

@@ -29,9 +29,13 @@
       become: yes
 
   tasks:
+    - name: Set Timezone to Europe/Sofia
+      shell: timedatectl set-timezone Europe/Sofia
+      become: true
+
     - name: Install Usefull Packages
       apt:
-        name: ['mc', 'dos2unix', 'vim', 'gdb', 'gdbserver']
+        name: ['git-flow', 'mc', 'dos2unix', 'vim', 'gdb', 'gdbserver']
         state: present
       become: true
 

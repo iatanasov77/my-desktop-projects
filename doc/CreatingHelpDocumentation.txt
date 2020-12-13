@@ -1,0 +1,6 @@
+
+
+~/tools/qt-5.14.1/x86_64/bin/qhelpgenerator qvocabulary.qhp -o qvocabulary.qhc
+
+
+

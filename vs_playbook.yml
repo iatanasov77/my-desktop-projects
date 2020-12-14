@@ -35,8 +35,16 @@
 
     - name: Install Usefull Packages
       apt:
-        name: ['git-flow', 'mc', 'dos2unix', 'vim', 'gdb', 'gdbserver']
+        # PHP is needed for bumpversion script, the others you kknow what its are
+        name: ['php', 'git-flow', 'mc', 'dos2unix', 'vim', 'gdb', 'gdbserver']
         state: present
+      become: true
+
+    - name: Install BumpVersion Script
+      get_url:
+        url: https://github.com/iatanasov77/bumpversion/raw/v0.2.0/bumpversion.php
+        dest: /usr/local/bin/bumpversion
+        mode: '0777'
       become: true
 
     - name: Terminate KDE Session

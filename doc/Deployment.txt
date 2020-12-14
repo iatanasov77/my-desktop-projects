@@ -3,3 +3,11 @@ Use This One:
 ---------------
 https://github.com/AppImageCrafters/appimage-builder
 https://appimage-builder.readthedocs.io/en/latest/intro/install.html
+
+
+Showing Icons:
+----------------
+https://stackoverflow.com/questions/4114418/qt-c-icons-not-showing-up-when-program-is-run
+
+Particulary two important folders: iconengines and imageformats which contain several dlls needed to load and draw the icon.
+The folders contains plugins ;)

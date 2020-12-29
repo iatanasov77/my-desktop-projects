@@ -1,0 +1,9 @@
+
+Import From SQL Script
+========================
+https://www.qtcentre.org/threads/27167-How-can-i-execute-a-database-script-within-Qt
+https://stackoverflow.com/questions/27014212/import-sqlite-database-using-qt-qsqldatabase
+https://gist.github.com/seyedmmousavi/ba5bdd77aca63a7825bb7091bc016b62
+
+
+

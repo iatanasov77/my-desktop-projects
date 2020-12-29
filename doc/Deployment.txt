@@ -1,3 +1,7 @@
+Create Setup:
+===============
+VmWare Install Builder: https://installbuilder.com/
+
 
 Use This One:
 ---------------
@@ -11,3 +15,27 @@ https://stackoverflow.com/questions/4114418/qt-c-icons-not-showing-up-when-progr
 
 Particulary two important folders: iconengines and imageformats which contain several dlls needed to load and draw the icon.
 The folders contains plugins ;)
+
+
+Using cqtdeployer
+================================
+sudo snap install cqtdeployer
+cqtdeployer -bin myApp
+
+------------------------------------------------------------
+ldd /projects/VS_QVocabulary/build/release/QVocabulary
+
+-------------------------------------------------------------
+export LD_LIBRARY_PATH=`pwd`/lib
+
+
+
+
+
+Using linuxdeployqt
+========================================
+wget https://github.com/probonopd/linuxdeployqt/releases/download/7/linuxdeployqt-7-x86_64.AppImage
+sudo apt installl patchelf
+
+vs-linuxdeployqt QVocabulary -unsupported-allow-new-glibc -exclude-libs="libqsqlpsql,libqsqlmysql" -bundle-non-qt-libs -appimage -always-overwrite
+

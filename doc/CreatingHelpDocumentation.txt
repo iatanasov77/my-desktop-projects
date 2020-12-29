@@ -1,6 +1,8 @@
+Good Tutorial:
+	https://www.walletfox.com/course/qhelpengineexample.php
 
-
-~/tools/qt-5.14.1/x86_64/bin/qhelpgenerator qvocabulary.qhp -o qvocabulary.qhc
-
-
+================================================================================
+qcollectiongenerator qvocabulary.qhcp -o qvocabulary.qhc
+OR
+qhelpgenerator qvocabulary.qhcp -o qvocabulary.qhc
 

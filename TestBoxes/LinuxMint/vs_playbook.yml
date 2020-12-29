@@ -1,0 +1,46 @@
+---
+- hosts: all
+  vars:
+    keyboard_layout: "us,bg"
+    keyboard_variant: ",phonetic"
+
+  roles:
+    - keyboard-layout
+
+  tasks:
+    - name: Force set default locale
+      lineinfile:
+        dest: "/etc/default/locale"
+        regexp: "^LANG="
+        line: 'LANG="en_US.UTF-8"'
+      become: true
+
+    - name: Set default locale to en_US.UTF-8
+      debconf:
+        name: locales
+        question: locales/default_environment_locale
+        value: en_US.UTF-8
+        vtype: select
+      become: true
+
+    - name: Set to generate locales
+      debconf:
+        name: locales
+        question: locales/locales_to_be_generated
+        value: en_US.UTF-8 UTF-8, fr_FR.UTF-8 UTF-8
+        vtype: multiselect
+      become: true
+
+    - name: Set Timezone to Europe/Sofia
+      shell: timedatectl set-timezone Europe/Sofia
+      become: true
+
+    - name: Install Usefull Packages
+      apt:
+        name: ['mc', 'dos2unix', 'vim', 'build-essential', 'valgrind']
+        state: present
+      become: true
+
+    - name: Terminate X Session
+      shell: loginctl terminate-user "vagrant"
+

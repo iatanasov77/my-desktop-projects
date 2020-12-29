@@ -1,29 +1,40 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "sbrow/kubuntu-standard"
-  #config.vm.box = "cerritus/kubuntu-lts"
-  config.vm.define "KUbuntuBox"
+  config.vm.box = "mazenovi/linuxmint"
+  config.vm.box_check_update = true
+  
+  config.vm.network :private_network, ip: "10.3.3.254"
+  config.vm.define "LinuxMint"
   
   config.vm.synced_folder "./", "/vagrant"
-  #config.vm.synced_folder "../ProjectsDesktop", "/projects"
   
+  config.ssh.forward_agent = true
   config.vm.provider "virtualbox" do |vb|
-    vb.name = "KUbuntuBox"
+    vb.name = "LinuxMint"
     vb.gui = true
+  
+	# Manage USB Controller
+	vb.customize ["modifyvm", :id, "--usb", "on"]
+    vb.customize ["modifyvm", :id, "--usbehci", "off"]
+
+    # # Customize the amount of memory on the VM:
+    # vb.memory = ENV['VBOX_MACHINE_MEMORY']
   end
   
 =begin
 	This is a Multiline Comment
 =end
+
   # Run Ansible to install Git into the VM (for using Ansible Galaxy later on)
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook	= "bootstrap.yml"
     #ansible.verbose	= true
   end
   
+  # Run Ansible to reconfigure how i want it
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook 			= "vs_playbook.yml"
     ansible.galaxy_role_file 	= "vs_requirements.yml"
     #ansible.verbose        	= true
   end
-
+  
 end

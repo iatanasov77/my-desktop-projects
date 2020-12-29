@@ -11,3 +11,8 @@ wget https://www.qxorm.com/php/add_download.php5?file_path=QxEntityEditor/1.2.5/
 https://github.com/pc-nju/QxOrmDemo
 https://github.com/lwlg/QxOrmDemo
 
+
+Migrations: 
+##################
+https://github.com/hicknhack-software/QSqlMigrator
+

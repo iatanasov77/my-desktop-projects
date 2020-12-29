@@ -27,12 +27,18 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = ENV['VAGRANT_BOX']
-  config.vm.box_check_update = true
-  #config.vm.box_version = "1.2.0"
-  #config.vm.box_version = "2.0.0"
+  if ENV['VAGRANT_BOX_VERSION']
+    config.vm.box_version = ENV['VAGRANT_BOX_VERSION']
+  else
+  	config.vm.box_check_update = true
+  end
   
-  config.vm.network :private_network, ip: ENV['PUBLIC_IP']
-  
+  #config.vm.network "private_network", ip: ENV['PRIVATE_IP'], auto_config: false
+  config.vm.network :private_network, ip: ENV['PRIVATE_IP']
+  if ENV['PUBLIC_IP']
+	  config.vm.network "public_network", ip: ENV['PUBLIC_IP'] # Without this the private ip not work
+  end
+ 
   config.vm.synced_folder "./", "/vagrant"
   config.vm.synced_folder ENV['FOLDER_PROJECTS'], "/projects"
 

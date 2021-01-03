@@ -1,0 +1,18 @@
+Create Translation sources
+-------------------------------------------
+touch translations/QVocabulary_en.ts
+lupdate -verbose QVocabulary.pro
+
+Build Translations:
+--------------------------------------------
+lrelease QVocabulary.pro
+
+Create Multilanguage Application
+-----------------------------------
+https://wiki.qt.io/How_to_create_a_multi_language_application
+https://doc.qt.io/qt-5/internationalization.html
+
+
+How to create translation sources
+-----------------------------------
+https://doc.qt.io/qt-5/qtlinguist-hellotr-example.html

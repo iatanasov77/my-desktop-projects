@@ -4,8 +4,14 @@
     - name: Install Python PIP
       become: true
       apt:
-        name: python-pip
+        name: ['python-pip', 'python3-pip']
         state: present
+
+    # pymysql require Python3
+    # ------------------------
+    # Into inventory file add: ansible_python_interpreter	= /usr/bin/python3
+    # Or: ln -sf /usr/bin/python3 /usr/bin/python
+    ###############################################################################
     - name: Make sure pymysql is present
       become: true
       pip:

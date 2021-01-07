@@ -56,6 +56,10 @@ Vagrant.configure(2) do |config|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
 
+	# Enable Audio
+	#vb.customize ["modifyvm", :id, "--audio", "alsa"]
+    #vb.customize ["modifyvm", :id, "--audioout", "on"]
+    
     # Enable USB 2.0
     #vb.customize ["modifyvm", :id, "--usb", "on"]
     #vb.customize ["modifyvm", :id, "--usbehci", "on"]

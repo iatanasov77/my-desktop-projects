@@ -31,3 +31,4 @@
 /examples/*/*.o
 /examples/HelloWorld/HelloWorld
 /examples/QxOrmDemo/ormDemo
+/examples/*/build/

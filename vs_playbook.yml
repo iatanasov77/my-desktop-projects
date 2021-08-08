@@ -7,6 +7,14 @@
         name: ['python-pip', 'python3-pip']
         state: present
 
+    - name: Use Python3 as Default Interpreter
+      become: true
+      file:
+        src: "/usr/bin/python3"
+        path: "/usr/bin/python"
+        state: link
+        force: yes
+    
     # pymysql require Python3
     # ------------------------
     # Into inventory file add: ansible_python_interpreter	= /usr/bin/python3
@@ -21,6 +29,7 @@
   vars:
     keyboard_layout: "us,bg"
     keyboard_variant: ",phonetic"
+    installbuilder_version: 21.6.0
     # This made kde to crash
     # ----------------------
     # with: virtualbox does not support mouse pointer integration in the current video mode

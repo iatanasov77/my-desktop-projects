@@ -14,3 +14,10 @@
     usermail: "i.atanasov77@gmail.com"
     use_android: false
     use_raspi: false
+    
+    # Original QT Version was: 5.14.1
+    ###################################
+    qt_version_major: 5.15
+    qt_version_minor: 2
+    #qt_version_full: "{{qt_version_major}}.{{qt_version_minor}}"
+    qt_version_full: "5.14.1"

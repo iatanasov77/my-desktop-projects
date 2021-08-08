@@ -48,7 +48,7 @@
 
     - name: Install BumpVersion Script
       get_url:
-        url: https://github.com/iatanasov77/bumpversion/raw/v0.2.0/bumpversion.php
+        url: https://github.com/iatanasov77/bumpversion/raw/v0.4.1/bumpversion.php
         dest: /usr/local/bin/bumpversion
         mode: '0777'
       become: true

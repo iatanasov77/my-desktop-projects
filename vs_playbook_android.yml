@@ -1,0 +1,48 @@
+---
+#########################################################
+# https://doc.qt.io/qt-5/android-getting-started.html
+#########################################################
+- hosts: all
+  vars:
+    openjdk_version: "11"   # Supported versions: 8, 11
+    gradle_version: "5.0"   # Existing Versions: https://gradle.org/releases/
+    
+  tasks:
+    - name: Install OpenJdk
+      apt:
+        name: ["openjdk-{{ openjdk_version }}-jdk"]
+        state: present
+      become: true
+  
+    #- name: Download Gradle
+    #  get_url:
+    #    url: "https://services.gradle.org/distributions/gradle-{{ gradle_version }}-bin.zip"
+    #    dest: /tmp
+    #    mode: '0777'
+    #  become: true
+    - name: Create a Gradle Installations directory if it does not exist
+      file:
+        path: /opt/gradle
+        state: directory
+        mode: '0777'
+      become: true5
+    - name: Install Gradle
+      unarchive:
+        src: "https://services.gradle.org/distributions/gradle-{{ gradle_version }}-bin.zip"
+        #src: "/tmp/gradle-{{ gradle_version }}-bin.zip"
+        dest: /opt/gradle
+        remote_src: yes
+      become: truee
+      
+    - name: Install Android SDK
+      apt:
+        name: ["android-sdk"]
+        state: present
+      become: true
+      
+    - name: Install Dependencies
+      apt:
+        name: ["zlib1g:i386 libncurses5:i386", "libsdl1.2debian:i386"]
+        state: present
+      become: truee
+

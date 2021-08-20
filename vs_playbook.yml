@@ -51,7 +51,7 @@
     - name: Install Usefull Packages
       apt:
         # PHP is needed for bumpversion script, the others you kknow what its are
-        name: ['php', 'git-flow', 'mc', 'dos2unix', 'vim', 'gdb', 'gdbserver']
+        name: ['php', 'git-flow', 'mc', 'dos2unix', 'vim', 'zstd', 'gdb', 'gdbserver']
         state: present
       become: true
 

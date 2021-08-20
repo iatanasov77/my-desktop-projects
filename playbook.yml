@@ -19,5 +19,4 @@
     ###################################
     qt_version_major: 5.15
     qt_version_minor: 2
-    #qt_version_full: "{{qt_version_major}}.{{qt_version_minor}}"
     qt_version_full: "5.14.1"

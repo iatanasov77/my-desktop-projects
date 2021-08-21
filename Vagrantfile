@@ -89,5 +89,8 @@ Vagrant.configure(2) do |config|
     ansible.playbook 			= "vs_playbook.yml"
     ansible.galaxy_role_file 	= "vs_requirements.yml"
     #ansible.verbose        	= true
+    ansible.extra_vars = {
+        gitCredentials: ENV['GIT_CREDENTIALS'],
+    }
   end
 end

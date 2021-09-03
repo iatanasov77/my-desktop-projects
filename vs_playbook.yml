@@ -4,7 +4,12 @@
     - name: Install Python PIP
       become: true
       apt:
-        name: ['python-pip', 'python3-pip']
+        name:
+          #  Package 'python-pip' has no installation candidate
+          # in Ubuntu 21.04
+          #######################################################
+          #- 'python-pip'
+          - 'python3-pip'
         state: present
 
     - name: Use Python3 as Default Interpreter

@@ -71,6 +71,9 @@ Vagrant.configure(2) do |config|
   # View the documentation for the provider you are using for more
   # information on available options.
 
+  # Run provision bash scripts to setup the environement
+  config.vm.provision "shell", path: "vagrant.d/provision/main.sh"
+		
   # Run Ansible to install Git into the VM (for using Ansible Galaxy later on)
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook	= "bootstrap.yml"

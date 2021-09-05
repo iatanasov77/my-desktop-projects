@@ -55,7 +55,12 @@ Vagrant.configure(2) do |config|
 
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
-
+	
+	# Customize Display Settings
+	vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
+    vb.customize ['modifyvm', :id, '--vram', '128']
+    vb.customize ['modifyvm', :id, '--accelerate3d', 'on']
+    
 	# Enable Audio
 	#vb.customize ["modifyvm", :id, "--audio", "alsa"]
     #vb.customize ["modifyvm", :id, "--audioout", "on"]

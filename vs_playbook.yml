@@ -45,6 +45,7 @@
     vs_qt_version_major: 5.15
     vs_qt_version_minor: 2
     vs_qt_download: true
+    install_InstallBuilder: false
 
   roles:
     - keyboard-layout
@@ -69,16 +70,16 @@
         mode: '0777'
       become: true
       
-    - name: Download the Git Prompt
-      get_url:
-        url: https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-        dest: /home/vagrant/.git-prompt.sh
-        mode: 0664
-      when: ansible_distribution == 'Ubuntu' and ansible_distribution_major_version == "21"
-
-    - name: Fix Git Prompt
-      shell: sed -i '/^if \[ "$color_prompt.*/i source ~/.git-prompt.sh' /home/vagrant/.bashrc
-      when: ansible_distribution == 'Ubuntu' and ansible_distribution_major_version == "21"
+#     - name: Download the Git Prompt
+#       get_url:
+#         url: https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+#         dest: /home/vagrant/.git-prompt.sh
+#         mode: 0664
+#       when: ansible_distribution == 'Ubuntu' and ansible_distribution_major_version == "21"
+# 
+#     - name: Fix Git Prompt
+#       shell: sed -i '/^if \[ "$color_prompt.*/i source ~/.git-prompt.sh' /home/vagrant/.bashrc
+#       when: ansible_distribution == 'Ubuntu' and ansible_distribution_major_version == "21"
 
     - name: Terminate KDE Session
       shell: loginctl terminate-user "vagrant"

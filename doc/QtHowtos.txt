@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/43909851/how-to-set-qlabel-size-according-to-the-size-of-its-text
+
+

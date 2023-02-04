@@ -78,20 +78,7 @@ Vagrant.configure(2) do |config|
 
   # Run provision bash scripts to setup the environement
   config.vm.provision "shell", path: "vagrant.d/provision/main.sh"
-		
-  # Run Ansible to install Git into the VM (for using Ansible Galaxy later on)
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook	= "bootstrap.yml"
-    #ansible.verbose	= true
-  end
 
-  # Run Ansible from wthin the Vagrant VM
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook 			= "playbook.yml"
-    ansible.galaxy_role_file 	= "requirements.yml"
-    #ansible.verbose        	= true
-  end
-  
   # Run Ansible to reconfigure how i want it
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook 			= "vs_playbook.yml"

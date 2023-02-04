@@ -32,8 +32,10 @@
         state: present
 
   vars:
-    keyboard_layout: "us,bg"
-    keyboard_variant: ",phonetic"
+    git_version: "2.26.0"
+    git_user_email: "i.atanasov77@gmail.com"
+    git_user_name: "Ivan I. Atanasov"
+    
     installbuilder_version: 21.6.0
     # This made kde to crash
     # ----------------------
@@ -42,13 +44,17 @@
     ##########################################################################################
     #install_wine: true
     #
+    
     vs_qt_version_major: 5.15
     vs_qt_version_minor: 2
     vs_qt_download: true
     install_InstallBuilder: false
+    
+    keyboardLayouts: "us,bg"
+    keyboardVariants: ",phonetic"
 
   roles:
-    - keyboard-layout
+    - { role: geerlingguy-git, become: true }
     - vs-qt-dev
 
   tasks:
@@ -65,21 +71,10 @@
 
     - name: Install BumpVersion Script
       get_url:
-        url: https://github.com/iatanasov77/bumpversion/raw/v0.4.1/bumpversion.php
+        url: https://github.com/iatanasov77/bumpversion/raw/v1.2.0/bumpversion.php
         dest: /usr/local/bin/bumpversion
         mode: '0777'
       become: true
-      
-#     - name: Download the Git Prompt
-#       get_url:
-#         url: https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-#         dest: /home/vagrant/.git-prompt.sh
-#         mode: 0664
-#       when: ansible_distribution == 'Ubuntu' and ansible_distribution_major_version == "21"
-# 
-#     - name: Fix Git Prompt
-#       shell: sed -i '/^if \[ "$color_prompt.*/i source ~/.git-prompt.sh' /home/vagrant/.bashrc
-#       when: ansible_distribution == 'Ubuntu' and ansible_distribution_major_version == "21"
 
     - name: Terminate KDE Session
       shell: loginctl terminate-user "vagrant"

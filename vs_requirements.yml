@@ -1,8 +1,9 @@
 ---
-- name: keyboard-layout
-  src: https://github.com/gantsign/ansible-role-keyboard.git
+- name: geerlingguy-git
+  src: https://github.com/geerlingguy/ansible-role-git
   scm: git
 
 - name: vs-qt-dev
   src: https://github.com/iatanasov77/ansible-role-qt-dev.git
   scm: git
+  #version: develop

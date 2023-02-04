@@ -1,4 +1,32 @@
-https://scotch.io/tutorials/how-to-create-a-vagrant-base-box-from-an-existing-one
+===============================================================================================
+= https://installati.one/install-sddm-ubuntu-22-04/
+= https://www.how2shout.com/linux/how-to-install-kde-plasma-on-ubuntu-22-04-jammy-jellyfish/
+===============================================================================================
+
+# Install KDE Minimal
+########################
+sudo apt -y update && sudo apt -y upgrade
+sudo reboot
+sudo apt -y install sddm
+sudo apt -y install kde-plasma-desktop
+
+===========================================================================================================
+= Note: If you are using Ubuntu 22.o4 and got a big Keyboard screen after rebooting then press Ctrl+Alt+F5 
+= and after that, you will see the command terminal, log in with your user, and create a file:
+===========================================================================================================
+sudo nano /etc/sddm.conf
+
+Add the following two lines:
+[General]
+InputMethod=
+
+Save the file by pressing Ctrl+O, hit the Enter key, and then exit by pressing Ctrl+X
+
+
+
+=========================================================================================
+= https://scotch.io/tutorials/how-to-create-a-vagrant-base-box-from-an-existing-one
+=========================================================================================
 
 # ON GUEST MACHINE
 ###########################

@@ -33,7 +33,10 @@ Save the file by pressing Ctrl+O, hit the Enter key, and then exit by pressing C
 sudo apt-get clean
 sudo dd if=/dev/zero of=/EMPTY bs=1M
 sudo rm -f /EMPTY
+sudo -i
 cat /dev/null > ~/.bash_history && history -c && exit
+cat /dev/null > ~/.bash_history && history -c && exit
+
 
 # ON HOST MACHINE
 ###########################

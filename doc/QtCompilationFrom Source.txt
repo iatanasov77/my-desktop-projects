@@ -11,7 +11,7 @@ https://www.qt.io/blog/qt-6-build-system
 cd ~/tools
 git clone https://code.qt.io/qt/qt5.git qt qt6-src
 git checkout 6.4.2
-git submodule update --init --recursive 
+git submodule update --init --recursive
 
 
 mkdir ~/tools/qt6-build

@@ -8,17 +8,39 @@ https://wiki.qt.io/Building_Qt_5_from_Git
 https://www.qt.io/blog/qt-6-build-system
 ============================================
 
-cd ~/tools
-git clone https://code.qt.io/qt/qt5.git qt qt6-src
+cd ~/tools/qt5-src
 git checkout 6.4.2
 git submodule update --init --recursive
 
 
 mkdir ~/tools/qt6-build
-cd  ~/tools/qt6-build
+mkdir ~/tools/qt6-build/build
+mkdir ~/tools/qt-6.4.2
+cd  ~/tools/qt6-build/build
 
-../qt6-src/configure -prefix "/home/vagrant/tools/qt-6.4.2/x86_64/" -release -opensource -confirm-license -make libs -make tools -opengl desktop -platform linux-g++-64 -nomake tests -nomake examples -sql-mysql -feature-library -skip qtwebengine -skip qtdocgallery -skip qtlocation
 
-cmake --build --verbose .
-cmake --install --verbose .
+../../qt5-src/configure -prefix "/home/vagrant/tools/qt-6.4.2/" -release -opensource -confirm-license -make libs -make tools -opengl desktop -platform linux-g++-64 -nomake tests -nomake examples -sql-mysql -feature-library -skip qtwebengine -skip qtdocgallery -skip qtlocation
+cmake --build . --verbose
+cmake --install . --verbose
 
+cd ~/tools/qt-6.4.2/
+tar -cvjSf /vagrant/Temp/QT_Distributions/qt-6.4.2-x86_64.tbz2 *
+rm -rf ./*
+
+
+cd  ~/tools/qt6-build/build
+rm -rf ./*
+
+# Remove This
+-I "/usr/include/dxsdk/"
+
+../../qt5-src/configure -prefix "/home/vagrant/tools/qt-6.4.2/" -opengl desktop -release -make libs -make tools -opensource -confirm-license -nomake tests -nomake examples -xplatform win32-g++ -skip qtwebengine -skip qtdocgallery -skip qtlocation -skip qtx11extras -skip qt3d -skip qtquick3d -skip qtquick3dphysics -skip qtcanvas3d -skip qtgraphicaleffects -skip qtmultimedia -skip qtwebsockets -skip qtactiveqt -qt-host-path /home/vagrant/tools/qt-6.4.2-x86_64 -- -DCMAKE_TOOLCHAIN_FILE=/home/vagrant/tools/qt6-build/cross/mingw-w64-x86_64.cmake
+cmake --build . --verbose
+cmake --install . --verbose
+
+cd ~/tools/qt-6.4.2/
+tar -cvjSf /vagrant/Temp/QT_Distributions/qt-6.4.2-mingw_64.tbz2 *
+rm -rf ./*
+
+# Debug Build
+cmake --build . --verbose > error.log 2>&1

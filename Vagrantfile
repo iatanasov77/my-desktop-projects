@@ -10,6 +10,11 @@ if ! Vagrant.has_plugin? 'vagrant-env'
 			vagrant plugin install vagrant-env"
 end
 
+if ! Vagrant.has_plugin? 'vagrant-disksize'
+	fail_with_message "vagrant-disksize missing, please install the plugin with this command:
+			vagrant plugin install vagrant-disksize"
+end
+
 # Workaround for changed server URL. Can be removed when using vagrant 2.x.
 #Vagrant::DEFAULT_SERVER_URL.replace('https://vagrantcloud.com')
 
@@ -32,6 +37,9 @@ Vagrant.configure(2) do |config|
   else
   	config.vm.box_check_update = true
   end
+ 
+  # Made environment to has enough free space to build New Versions of QT
+  config.disksize.size = '80GB'
   
   #config.vm.network "private_network", ip: ENV['PRIVATE_IP'], auto_config: false
   config.vm.network :private_network, ip: ENV['PRIVATE_IP']
@@ -51,7 +59,8 @@ Vagrant.configure(2) do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-    vb.name = ENV['MASHINE_NAME']
+    vb.name 	= ENV['MASHINE_NAME']
+    vb.memory	= ENV['VBOX_MACHINE_MEMORY']
 
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
@@ -77,7 +86,10 @@ Vagrant.configure(2) do |config|
   # information on available options.
 
   # Run provision bash scripts to setup the environement
-  config.vm.provision "shell", path: "vagrant.d/provision/main.sh"
+  config.vm.provision "shell", path: "vagrant.d/provision/main.sh", env: {
+    "SWAP_SIZE"	=> ENV['VBOX_MACHINE_SWAP_SIZE']
+  }
+
 
   # Run Ansible to reconfigure how i want it
   config.vm.provision "ansible_local" do |ansible|
@@ -88,4 +100,5 @@ Vagrant.configure(2) do |config|
         gitCredentials: ENV['GIT_CREDENTIALS'],
     }
   end
+
 end

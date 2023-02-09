@@ -1,3 +1,13 @@
+1.0.0	|	Release date: **09.02.2023**
+============================================
+* New Features:
+  - Add HowTo Compile New QT Version.
+  - Update Docs.
+  - Update Vagrant Machine to Use Extended Space For Box.
+  - Switch QT Version to  6.4.2
+  - Update vs_playbook.yml with new variables.
+
+
 0.1.0	|	Release date: **05.02.2023**
 ============================================
 * New Features:

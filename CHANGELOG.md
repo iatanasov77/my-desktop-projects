@@ -1,3 +1,10 @@
+1.1.0	|	Release date: **10.02.2023**
+============================================
+* New Features:
+  - Change 'mingw_directx_version'.
+  - Load Significat Ansible Variables From ENV.
+
+
 1.0.0	|	Release date: **09.02.2023**
 ============================================
 * New Features:

@@ -98,6 +98,10 @@ Vagrant.configure(2) do |config|
     #ansible.verbose        	= true
     ansible.extra_vars = {
         gitCredentials: ENV['GIT_CREDENTIALS'],
+        vs_qt_version_major: ENV['QT_VERSION_MAJOR'],
+        vs_qt_version_minor: ENV['QT_VERSION_MINOR'],
+        qt_bin_tools: ENV['QT_BIN_TOOLS'],
+        qt_libexec_tools: ENV['QT_LIBEXEC_TOOLS'],
     }
   end
 

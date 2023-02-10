@@ -45,20 +45,6 @@
     #install_wine: true
     #
     
-###################################################
-# Use Default Values For QT 5
-###################################################
-#     vs_qt_version_major: 6.4
-#     vs_qt_version_minor: 2
-#     vs_qt_download: true
-#     qt_bin_tools:
-#         - 'qmake'
-#         - 'lupdate'
-#         - 'lrelease'
-#     qt_libexec_tools:
-#         - 'uic'
-#         - 'qhelpgenerator'
-    
     mingw_directx_version: "June-2010"
     install_InstallBuilder: false
     

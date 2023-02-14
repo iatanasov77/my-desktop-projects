@@ -1,0 +1,42 @@
+https://wiki.qt.io/Building_Qt_5_from_Git
+https://www.qt.io/blog/qt-6-build-system
+============================================
+
+
+Checkout Branch (Version) You Want to Compile
+===============================================
+cd ~/tools/qt5-src
+git checkout 6.4.2
+git submodule update --init --recursive
+
+QT 5.15 Need This Fix: https://forum.qt.io/topic/136672/error-installing-qt-everywhere-src-5-15-2-on-ubuntu-22-04/3
+========================================================================================================================== 
+
+Compile QT5 For Linux
+==========================
+vs-compile-qt.sh
+cd ~/tools/qt-build/package
+tar -cvjSf /vagrant/Temp/QT_Distributions/qt-5.15.2-x86_64.tbz2 *
+
+Compile QT5 For Windows
+==========================
+vs-cross-compile-qt.sh
+cd ~/tools/qt-build/package
+tar -cvjSf /vagrant/Temp/QT_Distributions/qt-5.15.2-mingw_64.tbz2 *
+
+Compile QT6 For Linux
+==========================
+vs-compile-qt6.sh
+cd ~/tools/qt-build/package
+tar -cvjSf /vagrant/Temp/QT_Distributions/qt-6.4.2-x86_64.tbz2 *
+cp -r ~/tools/qt-build/package/* ~/tools/qt-build/host-target/
+
+Compile QT6 For Windows
+==========================
+vs-cross-compile-qt6.sh
+cd ~/tools/qt-build/package
+tar -cvjSf /vagrant/Temp/QT_Distributions/qt-6.4.2-mingw_64.tbz2 *
+
+Debug Build
+===================
+cmake --build . --verbose > error.log 2>&1

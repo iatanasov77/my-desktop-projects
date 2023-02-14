@@ -8,7 +8,6 @@
 /.dbeaver-data-sources.xml
 /.dbeaver/
 /.cproject
-/Temp/*/
 
 ##############################
 # Vagrant meta data

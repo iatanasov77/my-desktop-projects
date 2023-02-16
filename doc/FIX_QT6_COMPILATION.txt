@@ -1,4 +1,7 @@
+FIX FOR QT 6.4.2
+-----------------
 REMOVE THIS FROM FILE /home/vagrant/tools/qt-6.4.2/x86_64/include/QtCore/qcompilerdetection.h at ROW 450
+============================================================================================================
 
 #ifdef __cplusplus
 # if __has_include(<version>) /* remove this check once Integrity, QNX have caught up */

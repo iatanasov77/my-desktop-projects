@@ -6,7 +6,9 @@ https://www.qt.io/blog/qt-6-build-system
 Checkout Branch (Version) You Want to Compile
 ===============================================
 cd ~/tools/qt5-src
-git checkout 6.4.2
+git reset --hard --recurse-submodule
+git checkout 6.4
+git checkout tags/v6.4.2
 git submodule update --init --recursive
 
 QT 5.15 Need This Fix: https://forum.qt.io/topic/136672/error-installing-qt-everywhere-src-5-15-2-on-ubuntu-22-04/3

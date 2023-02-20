@@ -56,6 +56,13 @@
     - vs-qt-dev
 
   tasks:
+    - name: Add Developement API Hosts
+      lineinfile:
+        path: "/etc/hosts"
+        line: "10.3.3.2 wgp.lh"
+        state: present
+      become: true
+
     - name: Set Timezone to Europe/Sofia
       shell: timedatectl set-timezone Europe/Sofia
       become: true

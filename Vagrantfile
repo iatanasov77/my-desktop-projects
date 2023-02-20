@@ -102,6 +102,7 @@ Vagrant.configure(2) do |config|
         vs_qt_version_minor: ENV['QT_VERSION_MINOR'],
         qt_bin_tools: ENV['QT_BIN_TOOLS'],
         qt_libexec_tools: ENV['QT_LIBEXEC_TOOLS'],
+        use_mingw: ( ENV['USE_MINGW'] == 'true' )
     }
   end
 

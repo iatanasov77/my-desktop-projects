@@ -1,3 +1,13 @@
+1.2.0	|	Release date: **20.02.2023**
+============================================
+* New Features:
+  - Some Improvements to Main Playbook Tasks.
+  - Update ENV
+* Bug-Fixes:
+  - Fix Conflict.
+  - Fix Vagrantfile.
+
+
 1.1.1	|	Release date: **14.02.2023**
 ============================================
 * New Features:

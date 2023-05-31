@@ -107,6 +107,7 @@ Vagrant.configure(2) do |config|
         vs_qt_version_major: ENV['QT_VERSION_MAJOR'],
         vs_qt_version_minor: ENV['QT_VERSION_MINOR'],
         vs_qt_src_use_branch: ( ENV['QT_SRC_USE_BRANCH'] == 'true' ),
+        vs_qt_src_clone: ( ENV['QT_SRC_CLONE'] == 'true' ),
         vs_qt_download: ( ENV['QT_DOWNLOAD'] == 'true' ),
         qt_bin_tools: ENV['QT_BIN_TOOLS'],
         qt_libexec_tools: ENV['QT_LIBEXEC_TOOLS'],

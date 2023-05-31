@@ -1,6 +1,13 @@
 1.2.1	|	Release date: **31.05.2023**
 ============================================
 * New Features:
+* Bug-Fixes:
+* Commits:
+
+
+1.2.1	|	Release date: **31.05.2023**
+============================================
+* New Features:
   - Add Variable to set Using Branch or Tag for Src Clone.
   - Improve Vagrantfile and ENV Variables.
   - Add Conditiona; Variable From ENV

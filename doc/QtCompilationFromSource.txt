@@ -39,6 +39,19 @@ vs-cross-compile-qt6.sh
 cd ~/tools/qt-build/package
 tar -cvjSf /vagrant/Temp/QT_Distributions/qt-6.4.2-mingw_64.tbz2 *
 
+
+Configure Options and HOWTO Desplay Features, Enable Features and Disable Features
+------------------------------------------------------------------------------------
+https://gist.github.com/h3ssan/d83f5560abc1c9d9200bb3e23b1dc160
+======================================================================================
+Usage:  configure [options] [assignments]
+
+  -feature-<feature> ... Enable <feature>
+  -no-feature-<feature>  Disable <feature> [none]
+  -list-features ....... List available features. Note that some features
+                         have dedicated command line options as well.
+
+
 Debug Build
 ===================
 cmake --build . --verbose > error.log 2>&1

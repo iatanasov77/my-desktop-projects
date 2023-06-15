@@ -47,7 +47,8 @@ Vagrant.configure(2) do |config|
   
   #config.vm.network "private_network", ip: ENV['PRIVATE_IP'], auto_config: false
   config.vm.network :private_network, ip: ENV['PRIVATE_IP']
-  if ENV['PUBLIC_IP']
+  
+  if ENV['PUBLIC_NETWORK'] == 'true' then
 	  config.vm.network "public_network", ip: ENV['PUBLIC_IP'] # Without this the private ip not work
   end
  

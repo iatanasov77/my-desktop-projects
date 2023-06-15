@@ -1,3 +1,26 @@
+1.2.2	|	Release date: **02.06.2023**
+============================================
+* New Features:
+  - Add a TestProject Example
+
+
+1.2.1	|	Release date: **31.05.2023**
+============================================
+* New Features:
+* Bug-Fixes:
+* Commits:
+
+
+1.2.1	|	Release date: **31.05.2023**
+============================================
+* New Features:
+  - Add Variable to set Using Branch or Tag for Src Clone.
+  - Improve Vagrantfile and ENV Variables.
+  - Add Conditiona; Variable From ENV
+* Bug-Fixes:
+  - Fix Using Boolean Values From ENV Variables.
+
+
 1.2.0	|	Release date: **20.02.2023**
 ============================================
 * New Features:

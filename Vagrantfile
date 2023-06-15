@@ -38,6 +38,10 @@ Vagrant.configure(2) do |config|
   	config.vm.box_check_update = true
   end
  
+  if Vagrant.has_plugin?( "vagrant-vbguest" ) then
+    config.vbguest.auto_update = false
+  end
+ 
   # Made environment to has enough free space to build New Versions of QT
   config.disksize.size = '80GB'
   
@@ -64,6 +68,8 @@ Vagrant.configure(2) do |config|
 
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
+	
+	vb.check_guest_additions = true
 	
 	# Customize Display Settings
 	vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
@@ -97,9 +103,12 @@ Vagrant.configure(2) do |config|
     ansible.galaxy_role_file 	= "vs_requirements.yml"
     #ansible.verbose        	= true
     ansible.extra_vars = {
-        gitCredentials: ENV['GIT_CREDENTIALS'],
+        gitCredentials: JSON.parse( ENV['GIT_CREDENTIALS'] ),
         vs_qt_version_major: ENV['QT_VERSION_MAJOR'],
         vs_qt_version_minor: ENV['QT_VERSION_MINOR'],
+        vs_qt_src_use_branch: ( ENV['QT_SRC_USE_BRANCH'] == 'true' ),
+        vs_qt_src_clone: ( ENV['QT_SRC_CLONE'] == 'true' ),
+        vs_qt_download: ( ENV['QT_DOWNLOAD'] == 'true' ),
         qt_bin_tools: ENV['QT_BIN_TOOLS'],
         qt_libexec_tools: ENV['QT_LIBEXEC_TOOLS'],
         use_mingw: ( ENV['USE_MINGW'] == 'true' )

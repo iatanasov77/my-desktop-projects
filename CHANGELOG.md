@@ -1,3 +1,9 @@
+1.3.0	|	Release date: **15.06.2023**
+============================================
+* Bug-Fixes:
+  - Fix Detect Public Network is Enabled.
+
+
 1.2.2	|	Release date: **02.06.2023**
 ============================================
 * New Features:
